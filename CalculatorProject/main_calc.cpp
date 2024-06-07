@@ -9,16 +9,6 @@ using namespace std;
 
 void calcRunning()
 {
-    int* firstInt = new int;
-    int* secondInt = new int;
-    int* resultInt = new int;
-    
-    double* firstDouble = new double;
-    double* secondDouble = new double;
-    double* resultDouble = new double;
-
-    Calculator<int, int, int>* calcInt;
-    Calculator<double, double, double>* calcDouble;
     cout << "Choose type of calculator: " << endl;
     cout << "1. Int" << endl;
     cout << "2. Double" << endl;
@@ -30,22 +20,7 @@ void calcRunning()
         {
             cout << "Case 1" << endl;
 
-            delete firstDouble;
-            delete secondDouble;
-            delete resultDouble;
-            delete calcDouble;
-
-            firstDouble = nullptr;
-            secondDouble = nullptr;
-            resultDouble = nullptr;
-            calcDouble = nullptr;
-
-            //memory leak check
-            if(firstDouble != nullptr || secondDouble != nullptr || resultDouble != nullptr || calcDouble != nullptr)
-            {
-                cout << "Memory leak" << endl;
-            }
-
+            Calculator<int, int, int>* calcInt;
             calcInt->runningProcess();
 
             break;
@@ -54,22 +29,8 @@ void calcRunning()
         {
             cout << "Case 2" << endl;
 
-            delete firstInt;
-            delete secondInt;
-            delete resultInt;
-            delete calcInt;
 
-            firstInt = nullptr;
-            secondInt = nullptr;
-            resultInt = nullptr;
-            calcInt = nullptr;
-            
-            //memory leak check
-            if(calcInt != nullptr || firstInt != nullptr || secondInt != nullptr || resultInt != nullptr)
-            {
-                cout << "Memory leak" << endl;
-            }
-            
+            Calculator<double, double, double>* calcDouble;
             calcDouble->runningProcess();
             break;
         }
