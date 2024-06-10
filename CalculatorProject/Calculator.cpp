@@ -1,4 +1,5 @@
 #include "Calculator.h"
+#include "FunktionsBasic.h"
 
 
 template<class T1, class T2, class R>
@@ -43,32 +44,13 @@ template<typename T1, typename  T2, typename T3> void Calculator<T1, T2, T3>::ru
         
         cout << "Enter Number: ";
         cin >> second;
-        
-        if(operation == '+'){
-            result = first + second;
-        }else if(operation == '-'){
-            result = first - second;
-        }else if(operation == '*'){
-            result = first * second;
-        }else if(operation == '/'){
-            if(second == 0){
-                cout << "Division by zero is not allowed" << endl;
-                first = 0;
-                second = 0;
-                continue;
-            }
-            result = first / second;
-        }
+
+        operationCalc(first, second, operation, result);        //chouce an operation
 
         cout << "Result: " << result << endl;
 
         first = result;
 
-        cout << "Press ESC to exit" << endl;
-        if (GetAsyncKeyState(VK_ESCAPE))
-        {
-            break;
-            exit(0);
-        }
+        decisionMakingProc(first, second, operation, result);   //decisions in calc(exit, clear, continue)
     }
 }

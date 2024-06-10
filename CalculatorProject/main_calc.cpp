@@ -29,11 +29,16 @@ void calcRunning()
         {
             cout << "Case 2" << endl;
 
-
             Calculator<double, double, double>* calcDouble;
             calcDouble->runningProcess();
             break;
         }
+        default:
+        {
+            cout << "Wrong choice" << endl;
+            break;
+        }
+            
     }
     
 }
