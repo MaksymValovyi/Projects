@@ -1,7 +1,7 @@
 enable_testing()
 
-# Вказуємо шлях до Google Test
-add_subdirectory(${CMAKE_SOURCE_DIR}/googletest)
+# Підключення Google Test
+add_subdirectory(${GOOGLETEST_ROOT})
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
